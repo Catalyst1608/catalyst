@@ -55,7 +55,12 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		}
-  	}
+  	},
+	  fontFamily: {
+		inter: ["Inter", "sans-serif"],
+		Montserrat: ["Montserrat", "sans-serif"],
+	  },
+  
   },
   plugins: [require("tailwindcss-animate")],
 };
