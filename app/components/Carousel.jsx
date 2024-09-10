@@ -21,11 +21,23 @@ const Carousel = () => {
     {
       src: "/banner.png",
       alt: "Digital Maps by Startup India",
-      link: "/digital-maps",
+      link: "https://www.instagram.com/startupindia.gov.in/",
     },
-    { src: "/maps.png", alt: "Digital Maps", link: "/digital-maps" },
-    { src: "/maarg.png", alt: "Pitch Forward", link: "/pitch-forward" },
-    { src: "/investor.png", alt: "Gen AI Exchange", link: "/gen-ai-exchange" },
+    {
+      src: "/maps.png",
+      alt: "Digital Maps",
+      link: "https://www.startupindia.gov.in/digital-map/maps",
+    },
+    {
+      src: "/maarg.png",
+      alt: "Pitch Forward",
+      link: "https://maarg.startupindia.gov.in/",
+    },
+    {
+      src: "/investor.png",
+      alt: "Gen AI Exchange",
+      link: "https://investorconnect.startupindia.gov.in/",
+    },
   ];
 
   useEffect(() => {
@@ -54,7 +66,15 @@ const Carousel = () => {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center p-4">
+    <div
+      style={{
+        backgroundImage: "url('/web-bg.png_raw=1')",
+        backgroundSize: "cover", // or 'contain' depending on your design
+        backgroundPosition: "center",
+        height: "110vh",
+      }}
+      className=" flex flex-col items-center justify-center p-4"
+    >
       <div className="bg-white rounded-2xl shadow-2xl p-4 flex flex-col md:flex-row gap-8 w-full max-w-[1120px] mb-8">
         {/* Carousel Section */}
         <div className="w-full md:w-3/4 relative overflow-hidden rounded-xl">
