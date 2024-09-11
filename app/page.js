@@ -1,5 +1,8 @@
 import Image from "next/image";
 import SchemesAndPolicies from "./components/SchemesAndPolicies";
+
+import DPIIT from './DPIIT/page'
+
 import Carousel from "./components/Carousel";
 
 export default function Home() {
@@ -7,6 +10,7 @@ export default function Home() {
     <>
     <Carousel/>
     <SchemesAndPolicies/>
+    <DPIIT />
     </>
   );
 }
