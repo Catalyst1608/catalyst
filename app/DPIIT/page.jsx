@@ -1,9 +1,9 @@
 import React from "react";
 import Cards from "../components/cards";
-
+import Flowchart from "../components/flowchart";
 const Page = () => {
   return (
-    <div className="container mx-auto px-4 py-8 text-center">
+    <div className=" px-4 py-8 text-center">
       <h1 className="text-2xl md:text-4xl font-bold mb-4 text-gray-800">
         DPIIT Recognition
       </h1>
@@ -13,7 +13,10 @@ const Page = () => {
         benefits, easier compliance, IPR fast-tracking & more. Learn more about
         eligibility & benefits below.
       </p>
-      <Cards />
+      <div className="flex justify-between gap-5">
+        <Cards />
+        <Flowchart />
+      </div>
     </div>
   );
 };
