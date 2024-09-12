@@ -4,11 +4,13 @@ import SchemesAndPolicies from "./components/SchemesAndPolicies";
 import DPIIT from './DPIIT/page'
 
 import Carousel from "./components/Carousel";
+import KeyInitiatives from "./components/KeyInitiatives";
 
 export default function Home() {
   return (
     <>
     <Carousel/>
+    <KeyInitiatives/>
     <SchemesAndPolicies/>
     <DPIIT />
     </>
