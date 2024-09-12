@@ -1,10 +1,16 @@
 import Image from "next/image";
-import KeyInitiatives from "./components/KeyInitiatives";
+import SchemesAndPolicies from "./components/SchemesAndPolicies";
+
+import DPIIT from './DPIIT/page'
+
+import Carousel from "./components/Carousel";
 
 export default function Home() {
   return (
-    <div>
-      <KeyInitiatives />
-    </div>
+    <>
+    <Carousel/>
+    <SchemesAndPolicies/>
+    <DPIIT />
+    </>
   );
 }
