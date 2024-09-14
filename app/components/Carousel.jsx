@@ -69,7 +69,7 @@ const Carousel = () => {
     <div
       style={{
         backgroundImage: "url('/web-bg.png_raw=1')",
-        backgroundSize: "cover", // or 'contain' depending on your design
+        backgroundSize: "cover",
         backgroundPosition: "center",
         height: "110vh",
       }}
@@ -77,13 +77,13 @@ const Carousel = () => {
     >
       <div className="bg-white rounded-2xl shadow-2xl p-4 flex flex-col md:flex-row gap-8 w-full max-w-[1120px] mb-8">
         {/* Carousel Section */}
-        <div className="w-full md:w-3/4 relative overflow-hidden rounded-xl">
+        <div className="w-full md:w-3/4 relative overflow-hidden rounded-xl bg-black">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentIndex}
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
-              className="w-full h-[380px] object-cover object-center"
+              className="w-full object-cover object-center"
               initial={{ opacity: 0, x: 300 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -300 }}
