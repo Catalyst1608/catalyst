@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -47,43 +47,29 @@ const Carousel = () => {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    if (thumbnailsRef.current && thumbnailsRef.current.children[currentIndex]) {
-      thumbnailsRef.current.children[currentIndex].scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
-    }
-  }, [currentIndex]);
-
   const handleSlideChange = (index) => {
     setCurrentIndex(index);
   };
-
-  const visibleThumbnails = [...images, ...images].slice(
-    currentIndex,
-    currentIndex + 4
-  );
 
   return (
     <div
       style={{
         backgroundImage: "url('/web-bg.png_raw=1')",
-        backgroundSize: "cover", // or 'contain' depending on your design
+        backgroundSize: "cover",
         backgroundPosition: "center",
         height: "110vh",
       }}
-      className=" flex flex-col items-center justify-center p-4"
+      className="flex flex-col items-center justify-center p-4"
     >
       <div className="bg-white rounded-2xl shadow-2xl p-4 flex flex-col md:flex-row gap-8 w-full max-w-[1120px] mb-8">
         {/* Carousel Section */}
-        <div className="w-full md:w-3/4 relative overflow-hidden rounded-xl">
+        <div className="w-full md:w-3/4 relative overflow-hidden rounded-xl bg-black">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentIndex}
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
-              className="w-full h-[380px] object-cover object-center"
+              className="w-full object-cover object-center"
               initial={{ opacity: 0, x: 300 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -300 }}
@@ -105,21 +91,19 @@ const Carousel = () => {
             ref={thumbnailsRef}
             className="space-y-3 overflow-y-auto max-h-[300px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2"
           >
-            {visibleThumbnails.map((image, index) => (
+            {images.map((image, index) => (
               <motion.div
                 key={index}
                 className={`cursor-pointer transition-all duration-300 ${
-                  index === 0
+                  index === currentIndex
                     ? "ring-2 ring-blue-500 shadow-lg"
                     : "hover:opacity-100"
                 }`}
-                onClick={() =>
-                  handleSlideChange((currentIndex + index) % images.length)
-                }
+                onClick={() => handleSlideChange(index)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 animate={
-                  index === 0
+                  index === currentIndex
                     ? {
                         scale: [1, 1.1, 1],
                         transition: {
