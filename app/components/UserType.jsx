@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const options = [
   {
@@ -39,12 +40,20 @@ const options = [
   }
 ];
 
-
 const UserType = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const router = useRouter();
 
   const handleSelect = (value) => {
     setSelectedOption(value);
+  };
+
+  const handleNextStep = () => {
+    if (selectedOption === 'startup') {
+      router.push('/startupform');
+    } else {
+      alert(`You selected: ${selectedOption}`);
+    }
   };
 
   return (
@@ -52,15 +61,12 @@ const UserType = () => {
       <div className="bg-white p-8 rounded-lg shadow-md max-w-3xl w-full">
         <h2 className="text-2xl font-semibold text-center mb-4">WELCOME SATYAGYA SINGH!</h2>
         <p className="text-center text-gray-500 mb-8">SELECT YOUR COUNTRY</p>
-
         <select className="w-full p-2 mb-6 border rounded-md focus:outline-none">
           <option>India</option>
         </select>
-
         <p className="text-center mb-4">
           TELL US WHO YOU ARE? <span className="font-semibold">SELECT ONE OF THESE</span>
         </p>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {options.map((option, index) => (
             <div
@@ -73,10 +79,9 @@ const UserType = () => {
             </div>
           ))}
         </div>
-
         <button
           className="mt-8 w-full py-2 bg-gradient-to-r from-pink-400 to-orange-400 text-white rounded-md"
-          onClick={() => alert(`You selected: ${selectedOption}`)}
+          onClick={handleNextStep}
           disabled={!selectedOption}
         >
           NEXT STEP

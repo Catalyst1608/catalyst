@@ -10,7 +10,6 @@ import KeyInitiatives from "./components/KeyInitiatives";
 export default function Home() {
   return (
     <>
-    <UserType/>
     <Carousel/>
     <KeyInitiatives/>
     <SchemesAndPolicies/>
