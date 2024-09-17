@@ -36,7 +36,7 @@ const Cards = () => {
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="bg-white rounded-md space-y-10 shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 overflow-hidden cursor-pointer border border-gray-200 w-full"
+            className="bg-white rounded-md space-y-10 shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 overflow-hidden cursor-pointer border border-gray-400 w-full"
           >
             <img
               src={card.image}
