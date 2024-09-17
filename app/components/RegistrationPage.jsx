@@ -52,7 +52,7 @@ const countries = [
 const RegistrationForm = () => {
   return (
     <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-xl border border-orange-200">
-      <h2 className="text-3xl font-bold text-orange-600 mb-6 text-center">Join Our Community</h2>
+      <h2 className="text-3xl font-bold text-orange-600 mb-6 text-center">Startup Registration</h2>
       <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <InputField label="First Name" icon={User} required placeholder="John" />
         <InputField label="Last Name" icon={User} placeholder="Doe" />
