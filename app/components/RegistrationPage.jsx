@@ -1,114 +1,95 @@
-import React from 'react';
-import { ChevronDown, Globe, Lock, User, Mail, Phone, MapPin } from 'lucide-react';
+'use client'
+import React, { useState } from 'react';
 
-const InputField = ({ label, icon: Icon, type = 'text', placeholder, required = false }) => (
-  <div className="mb-4">
-    <label className="block text-sm font-medium text-gray-700 mb-1">
-      {label}{required && ' *'}
-    </label>
-    <div className="relative">
-      {Icon && (
-        <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-orange-500">
-          <Icon size={18} />
-        </span>
-      )}
-      <input
-        type={type}
-        placeholder={placeholder}
-        className={`w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out ${Icon ? 'pl-10' : ''}`}
-        required={required}
-      />
-    </div>
-  </div>
-);
+const StartupProfileForm = () => {
+  const [fundingRounds, setFundingRounds] = useState([]);
 
-const SelectField = ({ label, options, required = false }) => (
-  <div className="mb-4">
-    <label className="block text-sm font-medium text-gray-700 mb-1">
-      {label}{required && ' *'}
-    </label>
-    <div className="relative">
-      <select
-        className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none transition duration-150 ease-in-out"
-        required={required}
-      >
-        <option value="">{`Select ${label}`}</option>
-        {options.map((option, index) => (
-          <option key={index} value={option}>{option}</option>
-        ))}
-      </select>
-      <span className="absolute inset-y-0 right-0 pr-3 flex items-center text-orange-500 pointer-events-none">
-        <ChevronDown size={18} />
-      </span>
-    </div>
-  </div>
-);
+  const addFundingRound = () => {
+    setFundingRounds([...fundingRounds, { round: '', amount: '', investors: '', date: '' }]);
+  };
 
-const countries = [
-  "United States", "Canada", "United Kingdom", "Australia", "Germany", "France", "Japan", "India", "Brazil", "South Africa",
-  "Mexico", "Italy", "Spain", "Netherlands", "Sweden", "Norway", "Denmark", "Finland", "New Zealand", "Singapore"
-];
-
-const RegistrationForm = () => {
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-xl border border-orange-200 mt-4 mb-6">
-      <h2 className="text-3xl font-bold text-orange-600 mb-6 text-center">Startup Registration</h2>
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <InputField label="First Name" icon={User} required placeholder="John" />
-        <InputField label="Last Name" icon={User} placeholder="Doe" />
-        <InputField label="Year of Birth" icon={Lock} required placeholder="YYYY" type="number" />
-        <SelectField label="Gender" required options={['Male', 'Female', 'Non-binary', 'Prefer not to say']} />
-        <SelectField label="Country of Residence" icon={Globe} required options={countries} />
-        <InputField label="PIN Code" icon={MapPin} required placeholder="123456" />
-        <InputField label="State" icon={MapPin} required placeholder="Your State" />
-        <SelectField label="District" required options={['District 1', 'District 2', 'District 3']} />
-        <InputField label="PAN" icon={Lock} placeholder="ABCDE1234F" />
-        <InputField label="Email ID" icon={Mail} type="email" required placeholder="john.doe@example.com" />
-        
-        <div className="md:col-span-2">
-          <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-          <div className="relative flex">
-            <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-orange-100 text-orange-600 text-sm">
-              <Phone size={18} className="mr-2" />
-              +91
-            </span>
-            <input
-              type="tel"
-              placeholder="1234567890"
-              className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded-r-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"
-              required
-            />
-          </div>
-        </div>
-        
-        <div className="md:col-span-2">
-          <label className="flex items-center space-x-3">
-            <span className="text-sm font-medium text-gray-700">Is this your primary ID for all communication?</span>
-            <div className="flex items-center space-x-2">
-              <input type="radio" className="form-radio text-orange-500 focus:ring-orange-500" name="primary-id" value="yes" required />
-              <span className="text-gray-700">Yes</span>
-              <input type="radio" className="form-radio text-orange-500 focus:ring-orange-500" name="primary-id" value="no" />
-              <span className="text-gray-700">No</span>
+    <div className="min-h-screen bg-gradient-to-br from-yellow-100 to-orange-200 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-4xl">
+        <h1 className="text-4xl font-bold text-center text-orange-600 mb-8">🚀 Startup Profile</h1>
+        <form className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+              <input type="text" id="companyName" placeholder="Enter company name" 
+                className="w-full px-3 py-2 border border-orange-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
             </div>
-          </label>
-        </div>
-      </form>
-      
-      <div className="mt-8 flex flex-col sm:flex-row justify-between">
-        <button className="mb-4 sm:mb-0 px-6 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition duration-150 ease-in-out">
-          Back
-        </button>
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <button className="px-6 py-2 bg-indigo-900 text-white rounded-md hover:bg-green-400 hover:text-red-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition duration-150 ease-in-out">
-            Save as Draft
+            <div>
+              <label htmlFor="sector" className="block text-sm font-medium text-gray-700 mb-1">Sector</label>
+              <input type="text" id="sector" placeholder="Enter sector" 
+                className="w-full px-3 py-2 border border-orange-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="stage" className="block text-sm font-medium text-gray-700 mb-1">Stage</label>
+            <select id="stage" 
+              className="w-full px-3 py-2 border border-orange-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+              <option value="">Select stage</option>
+              <option value="idea">Idea</option>
+              <option value="early_stage">Early Stage</option>
+              <option value="growth_stage">Growth Stage</option>
+              <option value="mature">Mature</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-3">Funding Rounds</label>
+            {fundingRounds.map((_, index) => (
+              <div key={index} className="mb-4 p-4 bg-yellow-50 rounded-lg shadow">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <select className="w-full px-3 py-2 border border-orange-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                    <option value="">Select round</option>
+                    <option value="seed">Seed</option>
+                    <option value="series_a">Series A</option>
+                    <option value="series_b">Series B</option>
+                    <option value="series_c">Series C</option>
+                  </select>
+                  <input type="number" placeholder="Amount" className="w-full px-3 py-2 border border-orange-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                  <input type="text" placeholder="Investors" className="w-full px-3 py-2 border border-orange-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                  <input type="date" className="w-full px-3 py-2 border border-orange-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                </div>
+              </div>
+            ))}
+            <button type="button" onClick={addFundingRound} 
+              className="w-full mt-2 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-orange-600 bg-orange-100 hover:bg-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out">
+              + Add Funding Round
+            </button>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-3">Market Access</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                <span className="text-sm text-gray-700">Domestic</span>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" className="sr-only peer" />
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-600"></div>
+                </label>
+              </div>
+              <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                <span className="text-sm text-gray-700">International</span>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" className="sr-only peer" />
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-600"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" 
+            className="w-full px-6 py-3 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out">
+            Submit Profile
           </button>
-          <button className="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition duration-150 ease-in-out">
-            Preview and Submit
-          </button>
-        </div>
+        </form>
       </div>
     </div>
   );
 };
 
-export default RegistrationForm;
+export default StartupProfileForm;
