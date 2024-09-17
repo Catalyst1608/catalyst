@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 
 const RegisterPage = () => {
@@ -5,12 +6,12 @@ const RegisterPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 to-blue-500">
       <div className="bg-white p-8 my-8 rounded-lg shadow-lg w-full max-w-4xl flex">
         <div className="w-1/2 pr-8">
-          <a
+          <Link
             href="/"
             className="text-sm text-blue-500 mb-4 block hover:underline"
           >
             &larr; Back to Home
-          </a>
+          </Link>
           <h2 className="text-2xl font-semibold mb-6">Create An Account</h2>
           <form>
             <div className="mb-4 grid grid-cols-2 gap-4">
@@ -75,7 +76,6 @@ const RegisterPage = () => {
           </form>
         </div>
 
-        {/* Right Section - Info and Social Signup */}
         <div className="w-1/2 pl-8 border-l">
           <div className="flex items-center justify-center">
             <img src="/startupgujrat.png" alt="Startup India" className="h-32 mb-6" />
@@ -101,9 +101,9 @@ const RegisterPage = () => {
           </div>
           <p className="text-sm text-gray-500 mb-4">
             Already have an account?{" "}
-            <a href="/login" className="text-blue-500">
+            <Link href="/login" className="text-blue-500 hover:underline">
               Login here
-            </a>
+            </Link>
           </p>
           <div className="text-sm text-gray-400">
             <p>Industries Commisionerate,</p>
