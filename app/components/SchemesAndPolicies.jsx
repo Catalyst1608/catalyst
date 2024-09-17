@@ -58,8 +58,9 @@ const SchemesPolicies = () => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mx-10 lg:mx-28 lg:gap-6">
-        {cardData.map((card) => (
+        {cardData.map((card , index) => (
           <div
+          key={index} 
             className={`p-4 rounded-2xl shadow-md ${card.color} text-white flex flex-col justify-between`}
           >
             
