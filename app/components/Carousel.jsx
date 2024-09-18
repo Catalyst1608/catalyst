@@ -18,22 +18,32 @@ const Carousel = () => {
 
   const images = [
     {
-      src: "/banner.png",
+      src: "/c-3.png",
       alt: "Digital Maps by Startup India",
       link: "https://www.instagram.com/startupindia.gov.in/",
     },
     {
-      src: "/maps.png",
+      src: "/c-1.png",
       alt: "Digital Maps",
       link: "https://www.startupindia.gov.in/digital-map/maps",
     },
     {
-      src: "/maarg.png",
+      src: "/c-2.png",
       alt: "Pitch Forward",
       link: "https://maarg.startupindia.gov.in/",
     },
     {
-      src: "/investor.png",
+      src: "/Gujarat.png",
+      alt: "Gen AI Exchange",
+      link: "https://investorconnect.startupindia.gov.in/",
+    },
+    {
+      src: "/iprn.png",
+      alt: "Gen AI Exchange",
+      link: "https://investorconnect.startupindia.gov.in/",
+    },
+    {
+      src: "/c-5.png",
       alt: "Gen AI Exchange",
       link: "https://investorconnect.startupindia.gov.in/",
     },
@@ -73,7 +83,7 @@ const Carousel = () => {
                 key={currentIndex}
                 src={images[currentIndex].src}
                 alt={images[currentIndex].alt}
-                className="w-full h-[60vh] object-cover object-center"
+                className="w-full object-cover object-center"
                 initial={{ opacity: 0, x: 300 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -300 }}
