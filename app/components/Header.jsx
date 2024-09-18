@@ -76,15 +76,15 @@ const Header = () => {
       {/* Navigation Links */}
       <div className="bg-white py-3">
         <div className="container mx-auto flex justify-center space-x-6">
-          <a href="#" className="text-gray-600 hover:text-orange-500">About</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Recognition</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Funding</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Schemes & Policies</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Market Access</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Marquee Initiatives</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Resources</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Get Featured</a>
-          <a href="#" className="text-gray-600 hover:text-orange-500">Network</a>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">About</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Recognition</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Funding</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Schemes & Policies</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Market Access</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Marquee Initiatives</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Resources</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Get Featured</Link>
+          <Link href="#" className="text-gray-600 hover:text-orange-500">Network</Link>
         </div>
       </div>
     </div>
