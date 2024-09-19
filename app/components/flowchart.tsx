@@ -11,6 +11,7 @@ import ReactFlow, {
     useEdgesState,
     Handle,
     Position,
+    BackgroundVariant
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 
@@ -106,7 +107,10 @@ const FlowchartComponent: React.FC = () => {
                 attributionPosition="bottom-left"
 
             >
-                <Background className=' bg-white' variant="dots" />
+              <Background
+                    className=' bg-white'
+                    variant={BackgroundVariant.Dots} // Use enum instead of string
+                />
 
             </ReactFlow>
         </div>

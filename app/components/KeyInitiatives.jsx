@@ -5,10 +5,10 @@ import React, { useState } from "react";
 const KeyInitiatives = () => {
   const items = [
     "GUJARAT INNOVATION & IPR INITIATIVE",
-    "IPR REGISTRATION HUB",
     "EXPERT GUIDANCE COMMUNITY",
     "GOVERNMENT & CORPORATE COLLABORATION",
-    "RESEARCH & IPR DATABASE",
+    "IPR REGISTRATION HUB",
+    "RESEARCH & INNOVATION DATABASE",
     "STARTUP SUPPORT FOR IP DEVELOPMENT",
   ];
 
@@ -80,7 +80,7 @@ const KeyInitiatives = () => {
             </p>
           </div>
         );
-      case "RESEARCH & IPR DATABASE":
+      case "RESEARCH & INNOVATION DATABASE":
         return (
           <div>
             <img
@@ -92,7 +92,7 @@ const KeyInitiatives = () => {
               {selectedItem}
             </h2>
             <p className="text-gray-600 leading-relaxed pl-6 pr-6">
-              Our extensive IPR research database allows innovators and startups to conduct in-depth research, analyze market trends, and stay updated on new patents and trademarks. This tool is continuously updated to ensure relevance and accuracy.
+            This database provides access to extensive research and innovation data. It helps startups and researchers stay informed about the latest trends, patents, and market analysis, crucial for strategic decision-making.
             </p>
           </div>
         );

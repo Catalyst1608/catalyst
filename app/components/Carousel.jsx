@@ -33,11 +33,6 @@ const Carousel = () => {
       link: "https://maarg.startupindia.gov.in/",
     },
     {
-      src: "/Gujarat.png",
-      alt: "Gen AI Exchange",
-      link: "https://investorconnect.startupindia.gov.in/",
-    },
-    {
       src: "/iprn.png",
       alt: "Gen AI Exchange",
       link: "https://investorconnect.startupindia.gov.in/",
@@ -61,10 +56,10 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-screen pt-7">
+    <div className="relative w-full min-h-screen pt-7">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center z-0"
+        className="absolute inset-0 bg-cover bg-center z-0 opacity-90"
         style={{
           backgroundImage: "url('/web-bg.png_raw=1')",
           backgroundSize: "cover",
@@ -78,18 +73,21 @@ const Carousel = () => {
         {/* Carousel Section */}
         <div className="w-full max-w-7xl flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-3/4 relative overflow-hidden rounded-xl bg-black/50 backdrop-blur-sm">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentIndex}
-                src={images[currentIndex].src}
-                alt={images[currentIndex].alt}
-                className="w-full object-cover object-center"
-                initial={{ opacity: 0, x: 300 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -300 }}
-                transition={{ duration: 0.5 }}
-              />
-            </AnimatePresence>
+            {/* 16:9 aspect ratio container */}
+            <div className="relative pt-[56.25%]">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentIndex}
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].alt}
+                  className="absolute top-0 left-0 w-full h-full object-cover object-center"
+                  initial={{ opacity: 0, x: 300 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -300 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </AnimatePresence>
+            </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-6">
               <Link href={images[currentIndex].link}>
                 <span className="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition-colors duration-300 cursor-pointer text-lg font-semibold">
@@ -101,7 +99,7 @@ const Carousel = () => {
 
           {/* Thumbnails Section */}
           <div className="w-full md:w-1/4 flex flex-col justify-between bg-white/10 backdrop-blur-sm rounded-xl p-4">
-            <div className="space-y-3 overflow-y-auto max-h-[50vh] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+            <div className="space-y-3 overflow-y-auto max-h-[65vh] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
               {images.map((image, index) => (
                 <motion.div
                   key={index}
@@ -117,22 +115,25 @@ const Carousel = () => {
                     index === currentIndex
                       ? {
                           scale: [1, 1.1, 1],
-                          transition: {
-                            duration: 0.5,
-                            ease: "easeInOut",
-                            times: [0, 0.5, 1],
-                            repeat: Infinity,
-                            repeatDelay: 1,
-                          },
+                          // transition: {
+                          //   duration: 0.5,
+                          //   ease: "easeInOut",
+                          //   times: [0, 0.5, 1],
+                          //   repeat: Infinity,
+                          //   repeatDelay: 1,
+                          // },
                         }
                       : {}
                   }
                 >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-20 object-cover rounded-lg"
-                  />
+                  {/* 16:9 aspect ratio container for thumbnails */}
+                  <div className="relative pt-[56.25%]">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -179,7 +180,6 @@ const Carousel = () => {
                   <button className="p-3 rounded-full hover:bg-orange-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-200">
                     <Icon className="w-6 h-6 text-orange-500" />
                   </button>
-
                 </div>
               ))}
             </div>

@@ -51,7 +51,7 @@ const SchemesPolicies = () => {
 
   return (
     <div className="flex flex-col items-center py-10">
-      <h2 className="text-3xl font-semibold mb-4 font-Montserrat text-gray-800">Schemes & Policies</h2>
+      <h2 className="text-4xl font-semibold mb-4 font-Montserrat text-gray-800">Schemes & Policies</h2>
       <p className="text-center font-Montserrat text-gray-500 mb-8 mx-6 max-w-2xl ">
         An insight into the schemes and policies landscape of the Gujarat Startin Ecosystem,
         including steps taken for Startup, IPR, Research Projects and Innovation,  to ease the regulatory burden.

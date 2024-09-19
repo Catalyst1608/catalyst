@@ -32,7 +32,7 @@ const Cards = () => {
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {cardData.map((card, index) => (
           <div
             key={index}
@@ -41,9 +41,9 @@ const Cards = () => {
             <img
               src={card.image}
               alt={card.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-32 object-cover"
             />
-            <div className="p-6">
+            <div className="p-4">
               <h3 className="text-base font-bold mb-2 text-gray-800 font-serif tracking-wide">
                 {card.title}
               </h3>
