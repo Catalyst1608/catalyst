@@ -34,10 +34,10 @@ const Header = () => {
       <div className="bg-white shadow">
         <div className="container mx-auto flex justify-between items-center py-4">
           <div className="flex items-center space-x-4 mx-16">
-            <img src="/startupgujrat.png" alt="#startupindia" className="h-10 border-r-2 border-gray-300" />
+            <img src="/startingujarat.png" alt="#startupindia" className="h-12 border-r-2 border-gray-300" />
             <div className="flex items-center space-x-2">
-              <img src="/dpiit.png" alt="DPIIT" className="h-8 pr-4 border-r-2 border-gray-300" />
-              <img src="/azadiamritmahotsav.png" alt="Azadi ka Amrit Mahotsav" className="h-8" />
+              <img src="/dpiit.png" alt="DPIIT" className="h-12 pr-4 border-r-2 border-gray-300" />
+              <img src="/azadiamritmahotsav.png" alt="Azadi ka Amrit Mahotsav" className="h-12" />
             </div>
           </div>
 
