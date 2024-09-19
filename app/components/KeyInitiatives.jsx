@@ -111,8 +111,8 @@ const KeyInitiatives = () => {
               The Shanghai Cooperation Organisation (SCO), founded in 2001,
               includes over 25 nations. To promote innovation, the SCO created a
               Special Working Group for Startups, chaired permanently by India.
-              India's DPIIT leads this group, organizing annual meetings and the
-              SCO Startup Forum to support the startup ecosystem in member
+              India&#39;s DPIIT leads this group, organizing annual meetings and
+              the SCO Startup Forum to support the startup ecosystem in member
               states.
             </p>
           </div>
