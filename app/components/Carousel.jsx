@@ -99,7 +99,7 @@ const Carousel = () => {
 
           {/* Thumbnails Section */}
           <div className="w-full md:w-1/4 flex flex-col justify-between bg-white/10 backdrop-blur-sm rounded-xl p-4">
-            <div className="space-y-3 overflow-y-auto max-h-[65vh] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
+            <div className="space-y-3 overflow-y-auto max-h-[55vh] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pr-2">
               {images.map((image, index) => (
                 <motion.div
                   key={index}
