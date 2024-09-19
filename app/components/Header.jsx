@@ -68,7 +68,7 @@ const Header = () => {
 
       {/* Navigation Links */}
       <div className="bg-white py-3">
-        <div className="container mx-auto flex justify-center space-x-6">
+        <div className="container mx-auto flex justify-center space-x-14">
           <DropdownLink label="About">
             <a href="#" className="block px-4 py-2 hover:bg-gray-200 hover:text-black">Overview</a>
             <a href="#" className="block px-4 py-2 hover:bg-gray-200 hover:text-black">Mission & Vision</a>
