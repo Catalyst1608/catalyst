@@ -59,7 +59,7 @@ const UserType = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
       <div className="bg-white p-8 rounded-lg shadow-md max-w-3xl w-full">
-        <h2 className="text-2xl font-semibold text-center mb-4">WELCOME SATYAGYA SINGH!</h2>
+        <h2 className="text-2xl font-semibold text-center mb-4">WELCOME!</h2>
         <p className="text-center text-gray-500 mb-8">SELECT YOUR COUNTRY</p>
         <select className="w-full p-2 mb-6 border rounded-md focus:outline-none">
           <option>India</option>
