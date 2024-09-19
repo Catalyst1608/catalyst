@@ -4,11 +4,11 @@ import Flowchart from "../components/flowchart";
 
 const Page = () => {
   return (
-    <div className="px-4 py-8 text-center">
-      <h1 className="text-2xl md:text-4xl font-bold mb-4 text-gray-800">
+    <div className="mx-10 lg:mx-28 py-24 text-center">
+      <h1 className="text-2xl md:text-4xl font-semibold font-Montserrat mb-4 text-gray-800">
         DPIIT Recognition
       </h1>
-      <p className="text-base md:text-lg text-gray-600 max-w-5xl mx-auto mb-8 leading-relaxed">
+      <p className="text-base text-gray-600 max-w-5xl mx-auto mb-8 leading-relaxed">
         Under the initiative to streamline research, innovation, and start-up
         growth in Gujarat, DPIIT recognition offers eligible companies the
         opportunity to access a range of benefits. These include easier
