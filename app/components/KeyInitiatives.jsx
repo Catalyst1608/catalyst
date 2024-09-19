@@ -60,7 +60,8 @@ const KeyInitiatives = () => {
               {selectedItem}
             </h2>
             <p className="text-gray-600 leading-relaxed pl-6 pr-6">
-              Our community connects newcomers with experienced experts, providing mentorship, guidance, and advice. Whether you're filing your first patent or navigating complex IP laws, mentors are available to support you, fostering growth and learning across the IPR ecosystem.
+              Our community connects newcomers with experienced experts, providing mentorship, guidance, and advice. 
+              Whether you are filing your first patent or navigating complex IP laws, mentors are available to support you, fostering growth and learning across the IPR ecosystem.
             </p>
           </div>
         );
