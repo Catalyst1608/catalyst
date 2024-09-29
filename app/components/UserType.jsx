@@ -51,7 +51,9 @@ const UserType = () => {
   const handleNextStep = () => {
     if (selectedOption === 'startup') {
       router.push('/startupform');
-    } else {
+    } else if(selectedOption === 'ipr'){
+      router.push('/patent');
+      } else {
       alert(`You selected: ${selectedOption}`);
     }
   };
