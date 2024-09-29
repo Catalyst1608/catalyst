@@ -54,7 +54,7 @@ const UserType = () => {
     } else if(selectedOption === 'ipr'){
       router.push('/patent');
       } else {
-      alert(`You selected: ${selectedOption}`);
+      alert(`${selectedOption} form is under construction`);
     }
   };
 
